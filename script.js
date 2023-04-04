@@ -23,13 +23,14 @@ function startGame () {
 }
 startGame()
 
+
 //First story:
 const startStory = document.createElement("p");
 startStory.setAttribute("class", "story");
 startStory.innerHTML = `You walk to the stone tower of the monster-wizard Kragon, located on the border of Elvan. Upon arrival, you ring the bell and wait for the wizard. You identify yourself and say that you are looking for magical artifacts. Kragon invites you to enter the tower`
-const buttonOne = document.querySelector("#start-btn")
-const buttonTwo = document.querySelector("#second-btn")
-buttonTwo.innerHTML ="Attack Kragon"
+const leftButton = document.querySelector(".leftBtn")
+const rightButton = document.querySelector(".rightBtn")
+rightButton.innerHTML ="Attack Kragon"
 
 buttonLetsGo.addEventListener("click", ()=> {
     container.appendChild(startStory)
@@ -37,13 +38,40 @@ buttonLetsGo.addEventListener("click", ()=> {
     container.removeChild(buttonLetsGo)
     container.removeChild(initialText)
     secondBtn.style.display = "block"
-    buttonOne.innerHTML ="Follow Kragon"
-    allButtons.appendChild(buttonOne)
-    allButtons.appendChild(buttonTwo)
+    leftButton.innerHTML ="Follow Kragon"
+    allButtons.appendChild(leftButton)
+    allButtons.appendChild(rightButton)
     allButtons.setAttribute("class", "two-buttons")
     initialTitle.setAttribute("id", "secondTitle");
-    buttonOne.classList.add("btn-options");
-    buttonTwo.classList.add("btn-options");    
+    leftButton.classList.add("btn-options");
+    rightButton.classList.add("btn-options");    
+})
+//loop:
+
+leftButton.addEventListener("click", () => {
+    if (leftButton.onclick ()) {
+        startStory.innerHTML= option3.this.text;
+        leftButton.innerHTML = option3.this.leftBtn;
+        rightButton.style.display = "none"
+    } else {
+        startStory.innerHTML= option2.text;
+        leftButton.innerHTML = option2.leftBtn;
+        rightButton.innerHTML = option2.rightBtn
+}
 })
 
-//follow
+/*
+const startStory = document.createElement("p");
+const leftButton = document.querySelector(".leftBtn")
+const rightButton = document.querySelector(".rightBtn")
+
+buttonLetsGo.addEventListener ("click", () =>{
+    container.removeChild(buttonLetsGo)
+    container.removeChild(initialText)
+    secondBtn.style.display = "block"
+   
+    startStory.innerHTML = 
+    leftButton.innerHTML = 
+    rightButton.innerHTML = 
+
+})*/
