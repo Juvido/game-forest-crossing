@@ -40,9 +40,6 @@ body {
     border-radius: 0.2em;
     color: rgb(48, 59, 50);
 }
-.text-story {
-    line-height: 230%;
-}
 
 #advice{
     align-self: center;
@@ -67,5 +64,11 @@ body {
     justify-content: center;
     background-color: rgba(252, 241, 210, 0.6);
     border-radius: 0.2em;
-    padding: 0 2em;
+    padding: 1em 2em;
+    gap: 0.5em;
+}
+
+.text-story {
+    line-height: 200%;
+    font-weight: 400;
 }

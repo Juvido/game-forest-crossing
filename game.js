@@ -8,7 +8,7 @@ class Game {
     this.storyOptions = [
       {
         text:
-          "0You walk to the stone tower of the monster-wizard Kragon, located on the border of Elvan. You identify yourself and say that you are looking for magical artifacts.Kargon displays a variety of potions and artifacts, and tells the story of the legendary hammer.",
+          "You walk to the stone tower of the monster-wizard Kragon, located on the border of Elvan. You identify yourself and say that you are looking for magical artifacts.Kargon displays a variety of potions and artifacts, and tells the story of the legendary hammer.",
         left: "Collect artefacts",
         right: "Attack Kragon",
         conditionToShow: 0,
@@ -16,65 +16,75 @@ class Game {
       },
       {
         text:
-          "1l You are entering the forest, which becomes humid, dark, and dense, following a narrow and winding trail to the north. Off the trail, you hear cries for help.",
+          `You are entering the forest, which becomes humid, dark, and dense, following a narrow and winding trail to the north. 
+          Off the trail, you hear cries for help`,
         left: "Help the person",
         right: "Go through the north trail",
         conditionToShow: 1,
         oddOrEven: "odd",
       },
       {
-        text: "1r Kragon advises you not to be foolish. He is very powerful. Now you are turned into a frog by a very strong magic and thrown out of the tower",
+        text: `Kragon advises you not to be foolish. He is very powerful! 
+        Now you are turned into a frog by a very strong magic and thrown out of the tower`,
         left: "You died. Game over",
-        right: 0,
+        right: "_",
         conditionToShow: 1,
         oddOrEven: "even",
       },
       {
-        text: "2l  Going off the trail a few meters, you see a strange humanoid creature caught in a trap, calling for help. You free it from the trap and it tells you a strange story about not accepting favours from humans and not letting you live. <br> You fight bravely but you can't winou advance towards Kargon, but you are turned into a frog by a very strong magic and thrown out of the tower",
+        text: `Going off the trail a few meters, you see a strange humanoid creature caught in a trap, calling for help. 
+        You free it from the trap and it tells you a strange story about not accepting favours from humans and not letting you live. 
+        You fight bravely but you can't win`,
         left: "You died. Game over",
-        right: 0,
+        right: "_",
         conditionToShow: 2,
         oddOrEven: "odd",
       },
       {
-        text: "2r Walking along the trail, you see a small creature with brown skin sitting on a rock. Despite its bad-tempered expression, it could be a Goblin and help you find the way to the castle.",
+        text: `Walking along the trail, you see a small creature with brown skin sitting on a rock. 
+        Despite its bad-tempered expression, it could be a Goblin and help you find the way to the castle`,
         left: "Ignore the goblin and keep walking",
         right: "Talk to him",
         conditionToShow: 2,
         oddOrEven: "even",
       },
       {
-        text: "Heading north, the trees become more sparse, seeming less threatening. There's an old wooden chair covered in moss on the right side of the trail",
+        text: `Heading north, the trees become more sparse, seeming less threatening. 
+        There's an old wooden chair covered in moss on the right side of the trail`,
         left: "Keep walking",
         right: "Stop and rest",
         conditionToShow: 3,
         oddOrEven: "odd",
       },
       {
-        text: "When he hears your voice, the Goblin begins to transform into a Mesras, a reptile-like monster. It attacks you, you have experience with fights but you are seriously injured.",
+        text: `When he hears your voice, the Goblin begins to transform into a Mesras, a reptile-like monster. 
+        It attacks you, although you have experience you are seriously injured.`,
         left: "You died. Game over",
-        right: 0,
+        right: "_",
         conditionToShow: 3,
         oddOrEven: "even",
       },
       {
-        text: "In the distance, to the right of the trail, you see large birds circling in the sky. As you approach, you recognize them as vultures",
+        text: `In the distance, to the right of the trail, you see large birds circling in the sky. 
+        As you approach, you recognize them as vultures`,
         left: "Keep walking to north",
         right: "Leave the trail and see what the vultures are observing",
         conditionToShow: 4,
         oddOrEven: "odd",
       },
       {
-        text: "The moss and wood chair is very comfortable and you relax deeply. However, this chair is removing your energy",
+        text: `The moss and wood chair is very comfortable and you relax deeply. 
+        However, this chair is removing your energy`,
         left: "You died. Game over",
-        right: 0,
+        right: "_",
         conditionToShow: 4,
         oddOrEven: "even",
       },
       {
-        text: "It was a trap to capture adventurers! You became food for monsters! ",
+        text: `It was a trap to capture adventurers! 
+        You became food for terrible creatures`,
         left: "You died. Game over",
-        right: 0,
+        right: "_",
         conditionToShow: 5,
         oddOrEven: "even",
       },
@@ -86,7 +96,8 @@ class Game {
         oddOrEven: "odd",
       },
       {
-        text: "Going down to the hill, the green and flat bottom of the valley stretches before you with the Elvan forest! After the forest is Stonebridge, the end of your journey ",
+        text: `Going down to the hill, the green and flat bottom of the valley stretches before you with the Elvan forest! 
+        After the forest it's possible to see Stonebridge Castle! The end of your journey!`,
         left: "Go through the valley",
         right: "Go through the north trail",
         conditionToShow: 6,
@@ -107,9 +118,9 @@ class Game {
         oddOrEven: "odd",
       },
       {
-        text: "Now you noticed that you were going around in circles and returned to the starting point",
-        left: "Follow the bridge",
-        right: "Turn back to the start",
+        text: "Now you noticed that you were going around in circles and returned to the starting point!",
+        left: "Turn back to the start",
+        right: "_",
         conditionToShow: 7,
         oddOrEven: "even",
       },
@@ -118,10 +129,13 @@ class Game {
 
   changeStage(stage) {
     for (let i=0; i < this.storyOptions.length; i++) {
-      if (this.storyOptions[i].left === "You died. Game over"){
-        this.op2btn.style.display = "block";
-        window.alert("You died!");
-        return;
+      if (this.storyOptions[i].right === "_"){
+          this.op1btn.addEventListener ("click", () => {
+          textAlert.innerHTML = "You died. Game over"
+          this.op2btn.style.display = "block";
+          this.op1btn.innerHTML = "Back to the start game"
+          startGame();
+        })
       }
     }
     if (this.gamePoints % 2 === 0) {
@@ -150,7 +164,7 @@ class Game {
       }
     }
   }
-  
+ 
 }
 
 

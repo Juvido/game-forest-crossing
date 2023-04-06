@@ -2,7 +2,7 @@ const title = document.getElementsByTagName("h1");
 const initialtext = document.getElementById("textContent");
 const initialBtnLeft = document.getElementById("left-btn");
 const initialBtnRight = document.getElementById("hide-btn")
-
+const textAlert = document.getElementsByClassName("text-alert")
 
 function startGame () {
     initialBtnLeft.addEventListener("click", ()=> {
@@ -18,14 +18,12 @@ function startGame () {
     op1btn.innerHTML = `${game.storyOptions[0].left}`;
     op2btn.innerHTML = `${game.storyOptions[0].right}`
 
-
     op1btn.addEventListener("click", () => {
         game.gameRound = game.gameRound + 1;
         game.gamePoints = game.gamePoints + 1;
             game.changeStage(game.gameRound);
         });
    
-
     op2btn.addEventListener("click", () => {
         game.gameRound = game.gameRound + 1;
         game.gamePoints = game.gamePoints + 2;
@@ -34,4 +32,5 @@ function startGame () {
 })
 }
 startGame()
+
 
