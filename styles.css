@@ -29,6 +29,8 @@ body {
 #textContent {
     display: flex;
     width: 80vw;
+    font-weight: 400;
+    line-height: 170%;
     height: 50vh;
     padding: 0 2em;
     flex-direction: column;
@@ -38,6 +40,10 @@ body {
     border-radius: 0.2em;
     color: rgb(48, 59, 50);
 }
+.text-story {
+    line-height: 230%;
+}
+
 #advice{
     align-self: center;
     font-weight: bolder;

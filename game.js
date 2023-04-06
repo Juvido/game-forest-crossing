@@ -118,12 +118,12 @@ class Game {
 
   changeStage(stage) {
     for (let i=0; i < this.storyOptions.length; i++) {
-      if (this.storyOptions[i] === "You died. Game over"){
+      if (this.storyOptions[i].left === "You died. Game over"){
         this.op2btn.style.display = "block";
-        window.alert("You died!")
+        window.alert("You died!");
+        return;
       }
     }
-
     if (this.gamePoints % 2 === 0) {
       for (let i = 0; i < this.storyOptions.length; i++) {
         if (

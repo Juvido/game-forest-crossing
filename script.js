@@ -9,6 +9,7 @@ function startGame () {
         initialBtnRight.setAttribute("id", "right-btn")
         
     const story = document.getElementById("textContent");
+        story.classList.add("text-story")
     const op1btn = document.getElementById("left-btn");
     const op2btn = document.getElementById("right-btn");
 
@@ -32,7 +33,5 @@ function startGame () {
         }); 
 })
 }
-
-
 startGame()
 
