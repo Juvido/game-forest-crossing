@@ -3,7 +3,13 @@
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
 }
-
+#hide-btn {
+    display: none;
+}
+#right-btn {
+    display:flex;
+    background-color: rgb(209, 209, 248);
+}
 body {
     width: 100vw;
     height: 100vh;
@@ -16,104 +22,38 @@ body {
     align-items: center;
     color: #ffffff;
 }
-
-#title {
+.title > h1 {
     font-weight: 700;
     font-size: 3.5em;
     padding: 1em;
     color: #f0e1b3;
     text-shadow: 2px 2px black;
 }
-
-.content {
+#textContent {
     display: flex;
+    width: 80vw;
+    height: 50vh;
+    padding: 0 2em;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    justify-content: center;
     background-color: rgba(252, 241, 210, 0.6);
     border-radius: 0.5em;
+    color: rgb(48, 59, 50);
+}
+#advice{
+    align-self: center;
+    font-weight: bolder;
+    padding-top: 2em;
 }
 
-.content > p {
-    width: 80vw;
-    font-weight: 400;
-    font-size: 1.1em;
-    color: #182D0B;
-    line-height: 2.0em;
-    padding: 1em;
-    text-align: center;
-}
-
-.start-btn:hover {
-    opacity: 0.7;
-}
-#start-btn {
-    font-weight: 400;
+#left-btn {
+    background-color: rgb(48, 59, 50);
+    color:rgb(252, 241, 210);
     font-size: 1em;
-    border-width: medium;
-    border-style: solid;
-    border-color: #f0c23a;
-    background-color: #f0e1b3;
-    padding: 13px;
-    margin-bottom: 0.5em;
-    color: #182D0B;
-}
-
-/*btn ao clicar "start"*/
-#letsGoBtn {
     font-weight: 400;
-    font-size: 1em;
-    border-width: medium;
-    border-style: solid;
-    border-color: #f0c23a;
-    background-color: #f0e1b3;
-    margin-bottom: 0.5em;
-    padding: 13px;
-    color: #182D0B;
-}
-
-/*ao clicar "Let's go"*/
-#secondTitle {
-    font-weight: 500;
-    font-size: 2.4em;
-    padding: 1em;
-    color: #f0e1b3;
-    text-shadow: 2px 2px black;
-}
-
-.container-story {
-    width: 80vw;
-    height: 68vh;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-around;    
-    background-color: rgba(250, 245, 232, 0.8);
-    border-radius: 0.5em;
-}
-
-.story {
-    font-weight: 400;
-    font-size: 1.2em;
-    color: #182D0B;
-    padding: 0 1.2em;
-    text-align: center;
-    line-height: 1.5em;
-}
-
-.two-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 2em;
-}
-.btn-options {
-    font-weight: 400;
-    font-size: 1em;
-    border-width: medium;
-    border-style: solid;
-    border-color: #f0c23a;
-    background-color: #f0e1b3;
-    margin-bottom: 0.3em;
-    padding: 13px;
-    color: #182D0B;
+    border: none;
+    width: 12em;
+    height: 4em;
+    border-radius: 3em;
 }
