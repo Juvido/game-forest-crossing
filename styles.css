@@ -6,10 +6,7 @@
 #hide-btn {
     display: none;
 }
-#right-btn {
-    display:flex;
-    background-color: rgb(209, 209, 248);
-}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -38,7 +35,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: rgba(252, 241, 210, 0.6);
-    border-radius: 0.5em;
+    border-radius: 0.2em;
     color: rgb(48, 59, 50);
 }
 #advice{
@@ -47,7 +44,7 @@ body {
     padding-top: 2em;
 }
 
-#left-btn {
+#left-btn, #right-btn {
     background-color: rgb(48, 59, 50);
     color:rgb(252, 241, 210);
     font-size: 1em;
@@ -56,4 +53,13 @@ body {
     width: 12em;
     height: 4em;
     border-radius: 3em;
+}
+#choices {
+    display: flex;
+    width: 80vw;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(252, 241, 210, 0.6);
+    border-radius: 0.2em;
+    padding: 0 2em;
 }
