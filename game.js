@@ -52,7 +52,7 @@ class Game {
         left: "Keep walking",
         right: "Stop and rest",
         conditionToShow: 3,
-        oddOrEven: "odd",
+        oddOrEven: "even",
       },
       {
         text: `When he hears your voice, the Goblin begins to transform into a Mesras, a reptile-like monster. 
@@ -60,7 +60,7 @@ class Game {
         left: "You died. Game over",
         right: "_",
         conditionToShow: 3,
-        oddOrEven: "even",
+        oddOrEven: "odd",
       },
       {
         text: `In the distance, to the right of the trail, you see large birds circling in the sky. 
@@ -84,14 +84,14 @@ class Game {
         left: "You died. Game over",
         right: "_",
         conditionToShow: 5,
-        oddOrEven: "even",
+        oddOrEven: "odd",
       },
       {
         text: "You are on the top of a hill and observe the options to continue your journey",
         left: "Going down through the rockys",
         right: "Going down among the trees",
         conditionToShow: 5,
-        oddOrEven: "odd",
+        oddOrEven: "even",
       },
       {
         text: `Going down to the hill, the green and flat bottom of the valley stretches before you with the Elvan forest! 
@@ -109,7 +109,8 @@ class Game {
         oddOrEven: "even",
       },
       {
-        text: "Although more difficult, this path took him straight to Stonebridge Castle!",
+        text: `Although more difficult, this path took him straight to Stonebridge Castle!
+        Go claim your reward! The gold awaits you!`,
         left: "You did it!",
         right: 0,
         conditionToShow: 7,
@@ -132,15 +133,23 @@ class Game {
           stage === this.storyOptions[i].conditionToShow
         ) {
           if (this.storyOptions[i].right === "_") {
+            this.story.innerText = this.storyOptions[i].text;
+            this.op2btn.style.display = "none";
+            this.op1btn.innerText = "Back to the start game";
             this.op1btn.addEventListener("click", () => {
-              alert("You died. Game over");
+              alert(" Game over");
               window.location.reload();
             });
+            console.log("odd and die");
             return;
-          } else if (this.storyOptions[i].left === "You did it!") {
+          } else if (this.storyOptions[i].right === "You did it!") {
+            this.story.innerText = this.storyOptions[i].text;
+            this.op2btn.style.display = "none";
+            this.op1btn.innerText = "You win! Back to the start game";
             this.op1btn.addEventListener("click", () => {
               alert("Well done! You did it!");
               window.location.reload();
+              console.log("odd and win");
             });
           } else {
             this.story.innerText = this.storyOptions[i].text;
@@ -158,17 +167,24 @@ class Game {
           stage === this.storyOptions[i].conditionToShow
         ) {
           if (this.storyOptions[i].right === "_") {
+            this.story.innerText = this.storyOptions[i].text;
+            this.op2btn.style.display = "none";
+            this.op1btn.innerText = "Back to the start game";
             this.op1btn.addEventListener("click", () => {
-              alert("You died. Game over");
-              this.op2btn.style.display = "block";
-              this.op1btn.innerHTML = "Back to the start game";
+              alert("Game over");
+              window.location.reload();
             });
+            console.log("even and die");
             return;
           } else if (this.storyOptions[i].left === "You did it!") {
+            this.story.innerText = this.storyOptions[i].text;
+            this.op2btn.style.display = "none";
+            this.op1btn.innerText = "You win! Back to the start game";
             this.op1btn.addEventListener("click", () => {
               alert("Well done! You did it!");
               window.location.reload();
             });
+            console.log("even and win");
           } else {
             this.story.innerText = this.storyOptions[i].text;
             this.op1btn.innerText = this.storyOptions[i].left;

@@ -20,14 +20,14 @@ initialBtnLeft.addEventListener("click", () => {
   op1btn.addEventListener("click", () => {
     game.gameRound = game.gameRound + 1;
     game.gamePoints = game.gamePoints + 1;
-
+console.log(game.gameRound)
     game.changeStage(game.gameRound);
   });
 
   op2btn.addEventListener("click", () => {
     game.gameRound = game.gameRound + 1;
     game.gamePoints = game.gamePoints + 2;
-
+console.log(game.gameRound)
     game.changeStage(game.gameRound);
   });
 });
