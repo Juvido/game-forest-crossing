@@ -140,7 +140,6 @@ class Game {
               alert(" Game over");
               window.location.reload();
             });
-            console.log("odd and die");
             return;
           } else if (this.storyOptions[i].right === "You did it!") {
             this.story.innerText = this.storyOptions[i].text;
@@ -149,7 +148,6 @@ class Game {
             this.op1btn.addEventListener("click", () => {
               alert("Well done! You did it!");
               window.location.reload();
-              console.log("odd and win");
             });
           } else {
             this.story.innerText = this.storyOptions[i].text;
@@ -174,7 +172,6 @@ class Game {
               alert("Game over");
               window.location.reload();
             });
-            console.log("even and die");
             return;
           } else if (this.storyOptions[i].left === "You did it!") {
             this.story.innerText = this.storyOptions[i].text;
@@ -184,12 +181,10 @@ class Game {
               alert("Well done! You did it!");
               window.location.reload();
             });
-            console.log("even and win");
           } else {
             this.story.innerText = this.storyOptions[i].text;
             this.op1btn.innerText = this.storyOptions[i].left;
             this.op2btn.innerText = this.storyOptions[i].right;
-            console.log("else even");
             return;
           }
         }
