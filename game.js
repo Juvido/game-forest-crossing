@@ -7,16 +7,14 @@ class Game {
     this.gamePoints = 1;
     this.storyOptions = [
       {
-        text:
-          "You walk to the stone tower of the monster-wizard Kragon, located on the border of Elvan. You identify yourself and say that you are looking for magical artifacts.Kargon displays a variety of potions and artifacts, and tells the story of the legendary hammer.",
+        text: "You walk to the stone tower of the monster-wizard Kragon, located on the border of Elvan. You identify yourself and say that you are looking for magical artifacts.Kargon displays a variety of potions and artifacts, and tells the story of the legendary hammer.",
         left: "Collect artefacts",
         right: "Attack Kragon",
         conditionToShow: 0,
         oddOrEven: "odd",
       },
       {
-        text:
-          `You are entering the forest, which becomes humid, dark, and dense, following a narrow and winding trail to the north. 
+        text: `You are entering the forest, which becomes humid, dark, and dense, following a narrow and winding trail to the north. 
           Off the trail, you hear cries for help`,
         left: "Help the person",
         right: "Go through the north trail",
@@ -38,7 +36,7 @@ class Game {
         left: "You died. Game over",
         right: "_",
         conditionToShow: 2,
-        oddOrEven: "odd",
+        oddOrEven: "even",
       },
       {
         text: `Walking along the trail, you see a small creature with brown skin sitting on a rock. 
@@ -46,7 +44,7 @@ class Game {
         left: "Ignore the goblin and keep walking",
         right: "Talk to him",
         conditionToShow: 2,
-        oddOrEven: "even",
+        oddOrEven: "odd",
       },
       {
         text: `Heading north, the trees become more sparse, seeming less threatening. 
@@ -126,28 +124,31 @@ class Game {
       },
     ];
   }
-
   changeStage(stage) {
-    for (let i=0; i < this.storyOptions.length; i++) {
-      if (this.storyOptions[i].right === "_"){
-          this.op1btn.addEventListener ("click", () => {
-          textAlert.innerHTML = "You died. Game over"
-          this.op2btn.style.display = "block";
-          this.op1btn.innerHTML = "Back to the start game"
-          startGame();
-        })
-      }
-    }
     if (this.gamePoints % 2 === 0) {
       for (let i = 0; i < this.storyOptions.length; i++) {
         if (
           this.storyOptions[i].oddOrEven === "odd" &&
           stage === this.storyOptions[i].conditionToShow
         ) {
-          this.story.innerText = this.storyOptions[i].text;
-          this.op1btn.innerText = this.storyOptions[i].left;
-          this.op2btn.innerText = this.storyOptions[i].right;
-          return;
+          if (this.storyOptions[i].right === "_") {
+            this.op1btn.addEventListener("click", () => {
+              alert("You died. Game over");
+              window.location.reload();
+            });
+            return;
+          } else if (this.storyOptions[i].left === "You did it!") {
+            this.op1btn.addEventListener("click", () => {
+              alert("Well done! You did it!");
+              window.location.reload();
+            });
+          } else {
+            this.story.innerText = this.storyOptions[i].text;
+            this.op1btn.innerText = this.storyOptions[i].left;
+            this.op2btn.innerText = this.storyOptions[i].right;
+            console.log("else odd");
+            return;
+          }
         }
       }
     } else {
@@ -156,21 +157,27 @@ class Game {
           this.storyOptions[i].oddOrEven === "even" &&
           stage === this.storyOptions[i].conditionToShow
         ) {
-          this.story.innerText = this.storyOptions[i].text;
-          this.op1btn.innerText = this.storyOptions[i].left;
-          this.op2btn.innerText = this.storyOptions[i].right;
-          return;
+          if (this.storyOptions[i].right === "_") {
+            this.op1btn.addEventListener("click", () => {
+              alert("You died. Game over");
+              this.op2btn.style.display = "block";
+              this.op1btn.innerHTML = "Back to the start game";
+            });
+            return;
+          } else if (this.storyOptions[i].left === "You did it!") {
+            this.op1btn.addEventListener("click", () => {
+              alert("Well done! You did it!");
+              window.location.reload();
+            });
+          } else {
+            this.story.innerText = this.storyOptions[i].text;
+            this.op1btn.innerText = this.storyOptions[i].left;
+            this.op2btn.innerText = this.storyOptions[i].right;
+            console.log("else even");
+            return;
+          }
         }
       }
     }
   }
- 
 }
-
-
-
-
-
-
-
-

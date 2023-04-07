@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="./styles.css" rel="stylesheet" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
     <title>Forest Crossing Adventures</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="title">
-        <h1> Forest Crossing Adventure </h1>
+      <h1>Forest Crossing Adventure</h1>
     </div>
-    <div id="textContent">
-        A journey through the Elvan Forest, where strange, winding trails wind their way down into eerie depths. Who knows what monstrous creatures we might encounter along the way?<br><br>
-        Your mission is to cross Elvan and deliver the legendary Stone Hammer to pacify and protect the people of Stonebridge from an ancient curse <br><br>
-        There are safe paths to cross the Elvan Forest, and you will need to make some attempts to find them. There are passages that make you walk much further or lead directly to death. <br><br>
+    <div class="text">
+      <p id="text-initial" class="hide">
+        A journey through the Elvan Forest, where strange, winding trails wind
+        their way down into eerie depths. Who knows what monstrous creatures we
+        might encounter along the way?<br/><br/>
+        Your mission is to cross Elvan and deliver the legendary Stone Hammer to
+        pacify and protect the people of Stonebridge from an ancient curse
+        <br/><br/>
+        There are safe paths to cross the Elvan Forest, and you will need to
+        make some attempts to find them. There are passages that make you walk
+        much further or lead directly to death. <br/><br/>
         <span id="advice">May the luck of the gods accompany you on the adventure ahead!</span>
-        <p class="text-alert"></p>
+      </p>
+      <p id="text-story"></p>
     </div>
     <div id="choices">
-        <button id="left-btn">Start Game</button>
-        <button id="hide-btn">.</button>
+      <button id="start-game">Start Game</button>
+      <button id="left-btn" class="hide">.</button>
+      <button id="right-btn" class="hide">.</button>
     </div>
-    
-</body>
-    <script src="./game.js"></script>
-    <script src="./script.js"></script>
+  </body>
+  <script src="./game.js"></script>
+  <script src="./script.js"></script>
 </html>
